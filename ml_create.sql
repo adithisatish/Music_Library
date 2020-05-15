@@ -35,8 +35,8 @@ CREATE TABLE album(
     prod_name VARCHAR(25),
 
     PRIMARY KEY (id),
-    FOREIGN KEY (art_id) REFERENCES artist(id),
-    FOREIGN KEY (prod_name) REFERENCES prod_comp(p_name)
+    FOREIGN KEY (art_id) REFERENCES artist(id) ON DELETE CASCADE,
+    FOREIGN KEY (prod_name) REFERENCES prod_comp(p_name) ON DELETE SET NULL
 );
 
 CREATE TABLE song(
@@ -49,7 +49,7 @@ CREATE TABLE song(
     alb_id INTEGER,
 
     PRIMARY KEY (id),
-    FOREIGN KEY (alb_id) REFERENCES album(id)
+    FOREIGN KEY (alb_id) REFERENCES album(id) ON DELETE SET NULL
 );
 
 CREATE TABLE playlist(
@@ -58,7 +58,7 @@ CREATE TABLE playlist(
     u_name VARCHAR(25),
 
     PRIMARY KEY (pl_name),
-    FOREIGN KEY (u_name) REFERENCES users(username)
+    FOREIGN KEY (u_name) REFERENCES users(username) ON DELETE CASCADE
 );
 
 CREATE TABLE listens_to(
@@ -66,8 +66,8 @@ CREATE TABLE listens_to(
     song_id INTEGER NOT NULL,
 
     PRIMARY KEY (u_name, song_id),
-    FOREIGN KEY (u_name) REFERENCES users(username),
-    FOREIGN KEY (song_id) REFERENCES song(id)
+    FOREIGN KEY (u_name) REFERENCES users(username) ON DELETE CASCADE,
+    FOREIGN KEY (song_id) REFERENCES song(id) ON DELETE SET NULL
 );
 
 CREATE TABLE art_songs(
@@ -75,8 +75,8 @@ CREATE TABLE art_songs(
     art_id INTEGER NOT NULL,
 
     PRIMARY KEY (song_id, art_id),
-    FOREIGN KEY (art_id) REFERENCES artist(id),
-    FOREIGN KEY (song_id) REFERENCES song(id)
+    FOREIGN KEY (art_id) REFERENCES artist(id) ON DELETE CASCADE,
+    FOREIGN KEY (song_id) REFERENCES song(id) ON DELETE CASCADE
 );
 
 CREATE TABLE songs_in_playlist(
@@ -84,7 +84,7 @@ CREATE TABLE songs_in_playlist(
     song_name VARCHAR(50) NOT NULL,
 
     PRIMARY KEY (list_name,song_name),
-    FOREIGN KEY (list_name) REFERENCES playlist(pl_name),
-    FOREIGN KEY (song_name) REFERENCES song(s_name)
+    FOREIGN KEY (list_name) REFERENCES playlist(pl_name) ON DELETE CASCADE,
+    FOREIGN KEY (song_name) REFERENCES song(s_name) ON DELETE CASCADE
 
 );
