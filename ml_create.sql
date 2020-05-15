@@ -70,3 +70,21 @@ CREATE TABLE listens_to(
     FOREIGN KEY (song_id) REFERENCES song(id)
 );
 
+CREATE TABLE art_songs(
+    song_id INTEGER NOT NULL,
+    art_id INTEGER NOT NULL,
+
+    PRIMARY KEY (song_id, art_id),
+    FOREIGN KEY (art_id) REFERENCES artist(id),
+    FOREIGN KEY (song_id) REFERENCES song(id)
+);
+
+CREATE TABLE songs_in_playlist(
+    list_name VARCHAR(25) NOT NULL,
+    song_name VARCHAR(50) NOT NULL,
+
+    PRIMARY KEY (list_name,song_name),
+    FOREIGN KEY (list_name) REFERENCES playlist(pl_name),
+    FOREIGN KEY (song_name) REFERENCES song(s_name)
+
+);
