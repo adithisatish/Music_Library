@@ -81,10 +81,10 @@ CREATE TABLE art_songs(
 
 CREATE TABLE songs_in_playlist(
     list_name VARCHAR(25) NOT NULL,
-    song_name VARCHAR(50) NOT NULL,
+    song_id INTEGER NOT NULL,
 
-    PRIMARY KEY (list_name,song_name),
+    PRIMARY KEY (list_name,song_id),
     FOREIGN KEY (list_name) REFERENCES playlist(pl_name) ON DELETE CASCADE,
-    FOREIGN KEY (song_name) REFERENCES song(s_name) ON DELETE CASCADE
+    FOREIGN KEY (song_id) REFERENCES song(id) ON DELETE CASCADE
 
 );
