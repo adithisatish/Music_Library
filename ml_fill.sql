@@ -1,7 +1,7 @@
 --Users
 INSERT INTO users(username,psword,gender,age,phone) VALUES
     ("Raksha","qwerty123",'F',19,'9911485894'),
-    ("Rxa","qwerty123",'F',18,'9900484594'),
+    ("Raxa","qwerty123",'F',18,'9900484594'),
     ("Ramesh","qwerty123",'M',45,'9923485894'),
     ("Rachel","qwerty123",'F',18,'9910485894'),
     ("Adithi","qwerty123",'F',13,'9914485894'),
@@ -9,7 +9,7 @@ INSERT INTO users(username,psword,gender,age,phone) VALUES
     ("Aditi","qwerty123",'F',39,'9978485894'),
     ("Shyla","qwerty123",'F',29,'9987485894'),
     ("Shaila","qwerty123",'F',61,'9989485894'),
-    ("Sanajna","qwerty123",'F',23,'9989985894'),
+    ("Sanjana","qwerty123",'F',23,'9989985894'),
     ("Frank","qwerty123",'M',56,'9900489094'),
     ("Trevor","qwerty123",'M',21,'9900434894'),
     ("Sam","qwerty123",'M',17,'9922456894'),
@@ -111,3 +111,95 @@ INSERT INTO song(id, s_name, genre, duration,tempo,rel_date,alb_id) VALUES
     (18,"WithoutYou","Rock", 120, 77,'2017-06-29',18),
     (19,"Crowd","Punk", 240, 95,'2017-03-16',17),
     (20,"AnotherWorld","Pop", 300, 120,'2020-08-21',1);
+
+--Playlist
+INSERT INTO playlist(pl_name,u_name,mood) VALUES
+    ("HappyDays","Raksha","Happy"),
+    ("Concentrate","Raxa","Somber"),
+    ("Fiesta","Adithi","Party"),
+    ("BreakupSongs","Ashwin","Sad"),
+    ("Denz","Adz","Party"),
+    ("BollywoodNights","Sam","Party"),
+    ("Bonfire","Raxa","Calm"),
+    ("RoadTrip","Sanjana","Wanderlust"),
+    ("Love","Shaila","Romantic"),
+    ("Thapang","Adithi","Party"),
+    ("Workout","Sam","Energetic"),
+    ("DeepFocus","Raxa","Somber"),
+    ("Rock","Trevor","Headbanging"),
+    ("Travel","Adz","Wanderlust"),
+    ("OofTeriAda","Rahul","Romantic"),
+    ("Cringe","Adithi","Bored"),
+    ("Reminisce","Raksha","Nostalgic"),
+    ("OldHindi","Sam","Nostalgic"),
+    ("ItemSongs","Rahul","Misogynistic"),
+    ("Tagaru","Adz","Energetic");
+
+--User mapped to Song
+INSERT INTO listens_to(u_name,song_id) VALUES
+    (1,1),
+    (1,15),
+    (2,12),
+    (2,1),
+    (13,12),
+    (14,6),
+    (6,6),
+    (12,7),
+    (10,19),
+    (5,15),
+    (5,20),
+    (7,17),
+    (8,13),
+    (12,5),
+    (1,16),
+    (5,10),
+    (4,3),
+    (6,9),
+    (12,6),
+    (20,10);
+
+--Song mapped to Artist
+INSERT INTO art_songs(art_id,song_id) VALUES
+    (1,1),
+    (9,2),
+    (8,5),
+    (4,4),
+    (6,8),
+    (17,11),
+    (5,6),
+    (7,10),
+    (10,12),
+    (13,20),
+    (15,20),
+    (12,14),
+    (19,19),
+    (18,8),
+    (9,3),
+    (2,2),
+    (3,4),
+    (11,11),
+    (14,15),
+    (16,16);
+
+--Song mapped to Playlist
+INSERT INTO songs_in_playlist(list_name, song_id) VALUES
+    ("Tagaru",1),
+    ("Love",5),
+    ("Travel",4),
+    ("Travel",8),
+    ("Rock",12),
+    ("Workout",15),
+    ("BollywoodNights",1),
+    ("ItemSongs",13),
+    ("Love",7),
+    ("Bonfire",20),
+    ("Travel",11),
+    ("Denz",10),
+    ("Tagaru",10),
+    ("Reminisce",14),
+    ("Concentrate",3),
+    ("DeepFocus",3),
+    ("Fiesta",12),
+    ("OofTeriAda",7),
+    ("Thapang",1),
+    ("Cringe",20);
