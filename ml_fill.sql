@@ -112,7 +112,7 @@ INSERT INTO song(id, s_name, genre, duration,tempo,rel_date,alb_id) VALUES
     (19,"Crowd","Punk", 240, 95,'2017-03-16',17),
     (20,"AnotherWorld","Pop", 300, 120,'2020-08-21',1);
 
---Playlist
+--Playlist --still to do. Conflicting reference elemnt
 INSERT INTO playlist(pl_name,u_name,mood) VALUES
     ("HappyDays","Raksha","Happy"),
     ("Concentrate","Raxa","Somber"),
@@ -126,37 +126,37 @@ INSERT INTO playlist(pl_name,u_name,mood) VALUES
     ("Thapang","Adithi","Party"),
     ("Workout","Sam","Energetic"),
     ("DeepFocus","Raxa","Somber"),
-    ("Rock","Trevor","Headbanging"),
+    ("Rock","Trevor","Headbang"),
     ("Travel","Adz","Wanderlust"),
     ("OofTeriAda","Rahul","Romantic"),
     ("Cringe","Adithi","Bored"),
     ("Reminisce","Raksha","Nostalgic"),
     ("OldHindi","Sam","Nostalgic"),
-    ("ItemSongs","Rahul","Misogynistic"),
+    ("ItemSongs","Rahul","Miso"),
     ("Tagaru","Adz","Energetic");
 
 --User mapped to Song
 INSERT INTO listens_to(u_name,song_id) VALUES
-    (1,1),
-    (1,15),
-    (2,12),
-    (2,1),
-    (13,12),
-    (14,6),
-    (6,6),
-    (12,7),
-    (10,19),
-    (5,15),
-    (5,20),
-    (7,17),
-    (8,13),
-    (12,5),
-    (1,16),
-    (5,10),
-    (4,3),
-    (6,9),
-    (12,6),
-    (20,10);
+    ("Raksha",1),
+    ("Raxa",15),
+    ("Adithi",12),
+    ("Ashwin",1),
+    ("Adz",12),
+    ("Frank",6),
+    ("Rahul",6),
+    ("Rohan",7),
+    ("Trevor",19),
+    ("Neha",15),
+    ("Swanuja",20),
+    ("Ramesh",17),
+    ("Rachel",13),
+    ("Sam",5),
+    ("Shriya",16),
+    ("Sourav",10),
+    ("Trevor",3),
+    ("Adithi",9),
+    ("Adz",6),
+    ("Aditi",10);
 
 --Song mapped to Artist
 INSERT INTO art_songs(art_id,song_id) VALUES
