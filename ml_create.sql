@@ -55,9 +55,9 @@ CREATE TABLE song(
 CREATE TABLE playlist(
     pl_name VARCHAR(25) NOT NULL,
     mood VARCHAR(10),
-    u_name VARCHAR(25),
+    u_name VARCHAR(25) NOT NULL,
 
-    PRIMARY KEY (pl_name),
+    PRIMARY KEY (pl_name,u_name),
     FOREIGN KEY (u_name) REFERENCES users(username) ON DELETE CASCADE
 );
 
