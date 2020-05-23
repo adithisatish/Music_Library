@@ -112,7 +112,7 @@ INSERT INTO song(id, s_name, genre, duration,tempo,rel_date,alb_id) VALUES
     (19,'Crowd','Punk', 240, 95,'2017-03-16',17),
     (20,'AnotherWorld','Pop', 300, 120,'2020-08-21',1);
 
---Playlist --still to do. Conflicting reference elemnt
+--Playlist
 INSERT INTO playlist(pl_name,u_name,mood) VALUES
     ('HappyDays','Raksha','Happy'),
     ('Concentrate','Raxa','Somber'),
