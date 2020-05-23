@@ -18,6 +18,6 @@ select a1.art_name, a2.art_name, s_name from artist as a1, artist as a2, song wh
 --The query returns each song twice w.r.t to each artist 
 
 --Number of songs by female artists released after 2014.
-SELECT COUNT(artist.id) FROM artist WHERE artist.id IN (
+SELECT COUNT(artist.id) as songs_by_female_artists FROM artist WHERE artist.id IN (
 SELECT art_id FROM album WHERE album.id IN (
 SELECT alb_id FROM song WHERE song.rel_date >= '2014-01-01')) AND artist.gender = 'F';
