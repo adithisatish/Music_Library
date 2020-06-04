@@ -1,5 +1,3 @@
-CREATE DATABASE music_library;
-
 CREATE TABLE users(
     username VARCHAR(25) NOT NULL,
     psword VARCHAR(30) NOT NULL,
@@ -87,4 +85,12 @@ CREATE TABLE songs_in_playlist(
     FOREIGN KEY (list_name) REFERENCES playlist(pl_name) ON DELETE CASCADE,
     FOREIGN KEY (song_id) REFERENCES song(id) ON DELETE CASCADE
 
+);
+
+CREATE TABLE psw_updates(
+    username VARCHAR(25) NOT NULL,
+    old_psw VARCHAR(30) NOT NULL,
+    new_psw VARCHAR(30) NOT NULL,
+    PRIMARY KEY(username),
+    FOREIGN KEY(username) REFERENCES users ON DELETE CASCADE
 );
